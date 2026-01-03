@@ -59,6 +59,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.material3.Icon
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.sp
 
 
 class MainActivity : ComponentActivity() {
@@ -136,6 +137,11 @@ fun TipTimeLayout() {
             style = MaterialTheme.typography.displaySmall
         )
         Spacer(modifier = Modifier.size(150.dp))
+        Text(
+            text = if (roundUp) "Effective tip rate: ${Math.round(tip/amount*10000.0)/100.0}%" else "",
+            style = MaterialTheme.typography.displaySmall,
+            fontSize = 15.sp
+        )
     }
 }
 
